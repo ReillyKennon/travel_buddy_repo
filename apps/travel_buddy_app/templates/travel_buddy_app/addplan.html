@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Plan A Trip</title>
+    </head>
+    <body>
+        <h2>Add a Trip</h2>
+        <form action="add" method="post">
+            {% csrf_token %}
+            <input type="text" name="planner" placeholder="Name of trip planner">
+            <input type="text" name="destination" placeholder="Trip Destination">
+            <input type="text" name="start" placeholder="Start Date">
+            <input type="text" name="end" placeholder="End Date">
+            <input type="text" name="description" placeholder="Describe the Trip">
+            <input type="submit" value="submit">
+        </form>
+        <form action="home" method="post">
+            {% csrf_token %}
+            <input type="submit" value="home">
+        </form>
+        <form action="logout" method="post">
+            {% csrf_token %}
+            <input type="submit" value="logout">
+        </form>
+    </body>
+</html>

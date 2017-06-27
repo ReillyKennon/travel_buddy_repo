@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>dashboard</title>
+    </head>
+    <body>
+
+        <h3>Hello {{ request.session.first_name }}</h3>
+
+
+
+        <h3>Trips Planned</h3>
+        <ul>
+            {% for Trip in trips %}
+                <li><p>Planner: {{ Trip.planner}}</p></li>
+                <li><p>Destination: {{ Trip.destination }}</p></li>
+                <li><p>Description: {{ Trip.description }}</p></li>
+                <li><p>Depart Date: {{ Trip.start}}</p></li>
+                <li><p>Return Date: {{ Trip.end}}</p></li>
+                <li><a href="destination">Join This Trip</a></li>
+                <p>----------</p>
+            {% endfor %}
+        </ul>
+        <a href="addplan">Plan a trip</a>
+        <form action="logout" method="post">
+            {% csrf_token %}
+            <input type="submit" value="logout">
+        </form>
+
+
+    </body>
+</html>
